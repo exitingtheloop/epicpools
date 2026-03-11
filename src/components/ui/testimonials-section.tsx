@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { cn } from "../../lib/utils";
-import { TestimonialCard, TestimonialAuthor } from "./testimonial-card";
+import { TestimonialCard } from "./testimonial-card";
 import { supabase } from "@/lib/db";
 import type { Database } from "@/lib/database.types";
 

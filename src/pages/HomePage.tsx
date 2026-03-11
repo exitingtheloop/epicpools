@@ -9,7 +9,7 @@ import CtaSection from '../components/home/CtaSection';
 import { motion } from 'framer-motion';
 
 const HomePage: React.FC = () => {
-  const [testimonials, setTestimonials] = useState([]);
+  const [testimonials, setTestimonials] = useState<Array<{quote: string; name: string; designation: string; src: string}>>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

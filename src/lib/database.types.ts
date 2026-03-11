@@ -12,6 +12,7 @@ export interface Database {
       projects: {
         Row: {
           id: string
+          slug: string
           title: string
           type: string
           location: string
@@ -22,6 +23,7 @@ export interface Database {
         }
         Insert: {
           id?: string
+          slug: string
           title: string
           type: string
           location: string
@@ -32,6 +34,7 @@ export interface Database {
         }
         Update: {
           id?: string
+          slug?: string
           title?: string
           type?: string
           location?: string

@@ -25,7 +25,7 @@ const ProjectPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [selectedMedia, setSelectedMedia] = useState<{url: string; type: string} | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [imagesLoaded, setImagesLoaded] = useState(0);
+  const [, setImagesLoaded] = useState(0);
   const [initialLoading, setInitialLoading] = useState(true);
   const [mediaLoading, setMediaLoading] = useState(true);
   const mediaRef = useRef<HTMLDivElement>(null);
@@ -76,11 +76,11 @@ const ProjectPage: React.FC = () => {
         const formattedProject = {
           ...projectData,
           categories: projectData.project_category_mappings.map(
-            mapping => mapping.project_categories.name
+            (mapping: { project_categories: { name: string } }) => mapping.project_categories.name
           ),
           images: projectData.project_assets
-            .sort((a, b) => a.order - b.order)
-            .map(asset => ({
+            .sort((a: { order: number }, b: { order: number }) => a.order - b.order)
+            .map((asset: { url: string; type: string }) => ({
               url: asset.url,
               type: asset.type
             }))
@@ -93,8 +93,8 @@ const ProjectPage: React.FC = () => {
           
           // Start loading all images
           const imageUrls = formattedProject.images
-            .filter(img => img.type === 'image')
-            .map(img => img.url);
+            .filter((img: { type: string }) => img.type === 'image')
+            .map((img: { url: string }) => img.url);
           
           const loadImage = (url: string) => {
             return new Promise((resolve) => {
