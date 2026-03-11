@@ -1,0 +1,57 @@
+@tailwind components;
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply font-montserrat px-6 py-3 rounded-none transition duration-300 inline-flex items-center justify-center;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-600 text-white hover:bg-white hover:text-black shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply btn bg-transparent border border-white text-white hover:bg-white/10;
+  }
+
+  .btn-outline {
+    @apply btn bg-transparent border border-primary-600 text-primary-600 hover:bg-primary-50;
+  }
+
+  .section-title {
+    @apply text-2xl tracking-[0.2em] text-secondary-900 font-normal uppercase mb-2;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-secondary-600 mb-12 max-w-2xl;
+  }
+
+  .navbar-link {
+    @apply relative font-medium transition-all duration-200;
+  }
+
+  .navbar-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 transition-all duration-300;
+  }
+
+  .navbar-link:hover::after {
+    @apply w-full;
+  }
+
+  .navbar-link.active::after {
+    @apply w-full;
+  }
+
+  /* Add height variations based on scroll state */
+  .navbar-link::after {
+    height: 2px;
+  }
+
+  .scrolled .navbar-link::after {
+    height: 1px;
+  }
+}

@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://epicpoolsandspas.com
+
+# Sitemaps
+Sitemap: https://epicpoolsandspas.com/sitemap.xml
